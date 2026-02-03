@@ -29,6 +29,7 @@
       font-size: 22px;
       animation: floatUp 6s linear infinite;
       opacity: 0.7;
+      z-index: 1;
     }
 
     @keyframes floatUp {
@@ -75,9 +76,9 @@
 
     .cats img {
       width: 100%;
-      height: 90px;
+      height: 95px;
       object-fit: cover;
-      border-radius: 16px;
+      border-radius: 18px;
       box-shadow: 0 8px 14px rgba(0,0,0,0.15);
     }
 
@@ -87,6 +88,7 @@
       justify-content: center;
       position: relative;
       margin-top: 10px;
+      height: 60px;
     }
 
     button {
@@ -108,6 +110,7 @@
       background: #eee;
       color: #666;
       position: absolute;
+      right: 0;
     }
 
     button:hover {
@@ -135,23 +138,26 @@
       heart.style.left = Math.random() * 100 + "vw";
       heart.style.animationDuration = (4 + Math.random() * 3) + "s";
       document.body.appendChild(heart);
-
       setTimeout(() => heart.remove(), 7000);
-    }, 300);
+    }, 350);
   </script>
 
   <div class="card">
     <h1>PLEASE FORGIVE ME 🥺💗</h1>
-    <p>I’m really really really sorryyyyyyy.<br>
-       Please don’t be mad anymore 😿💞</p>
+    <p>
+      I’m really really really sorryyyyyyy.<br>
+      Please don’t be mad anymore 😿💞
+    </p>
 
+    <!-- WORKING cats + flowers -->
     <div class="cats">
-      <img src="https://placekitten.com/300/300">
-      <img src="https://placekitten.com/301/300">
-      <img src="https://placekitten.com/302/300">
-      <img src="https://placekitten.com/300/301">
-      <img src="https://placekitten.com/301/301">
-      <img src="https://placekitten.com/302/301">
+      <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=300&q=80">
+      <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=300&q=80">
+      <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=300&q=80">
+
+      <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=300&q=80">
+      <img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=300&q=80">
+      <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=300&q=80">
     </div>
 
     <div class="buttons">
@@ -161,7 +167,7 @@
 
     <div class="message" id="msg">
       YAYYYYY 😭💖 THANK YOUUUU!!  
-      Friendship restored 🐱💕
+      Friendship restored 🐱🌸💕
     </div>
   </div>
 
@@ -169,11 +175,8 @@
     const noBtn = document.getElementById("noBtn");
 
     noBtn.addEventListener("mouseenter", () => {
-      const maxX = window.innerWidth - noBtn.offsetWidth - 20;
-      const maxY = window.innerHeight - noBtn.offsetHeight - 20;
-
-      const x = Math.random() * maxX;
-      const y = Math.random() * maxY;
+      const x = Math.random() * (window.innerWidth - noBtn.offsetWidth - 20);
+      const y = Math.random() * (window.innerHeight - noBtn.offsetHeight - 20);
 
       noBtn.style.left = x + "px";
       noBtn.style.top = y + "px";
